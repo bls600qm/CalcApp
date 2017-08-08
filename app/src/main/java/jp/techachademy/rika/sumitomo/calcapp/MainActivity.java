@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     EditText mEditText;
     EditText mEditText2;
-    float calcValue;
+    float answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button2 = (Button)findViewById(R.id.hiku);
         button2.setOnClickListener(this);
         Button button3 = (Button)findViewById(R.id.kakeru);
-        button.setOnClickListener(this);
+        button3.setOnClickListener(this);
         Button button4 = (Button)findViewById(R.id.waru);
-        button2.setOnClickListener(this);
+        button4.setOnClickListener(this);
 
         mEditText = (EditText)findViewById(R.id.editText);
         mEditText2 = (EditText)findViewById(R.id.editText2);
@@ -47,11 +47,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         float value = Integer.parseInt(text);
         float value2 = Integer.parseInt(text2);
 
-        intent.putExtra("value",10);
-        intent.putExtra("value2",20);
+        if(v.getId()==R.id.tasu){
+            answer = value + value2;
+        }else if(v.getId()==R.id.hiku){
+            answer = value - value2;
+        }else if(v.getId()==R.id.kakeru){
+            answer = value * value2;
+        }else{
+            answer = value / value2;
+        }
+        intent.putExtra("answer",10);
+
         startActivity(intent);
-
-
 
 
     }
