@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     EditText mEditText;
     EditText mEditText2;
-    //float answer;
+
+    float answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         float value = Float.parseFloat(text);
         float value2 = Float.parseFloat(text2);
 
-        float answer;
+
 
         if(v.getId() == R.id.tasu){
             answer = value + value2;
