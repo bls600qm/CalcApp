@@ -14,7 +14,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         Intent intent =getIntent();
-        float VALUE = intent.getFloatExtra("answer",0);
+        float VALUE = intent.getFloatExtra("watasu",0);
 
 
         TextView textView =(TextView)findViewById(R.id.textview);
