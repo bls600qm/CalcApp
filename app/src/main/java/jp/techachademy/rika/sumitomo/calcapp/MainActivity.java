@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.content.Intent;
-
+import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String text = mEditText.getText().toString();
         String text2 =mEditText2.getText().toString();
 
-        float value = Integer.parseInt(text);
-        float value2 = Integer.parseInt(text2);
+        float value = Float.parseFloat(text);
+        float value2 = Float.parseFloat(text2);
 
         if(v.getId()==R.id.tasu){
             answer = value + value2;
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else{
             answer = value / value2;
         }
+       // Log.d("UI_PARTS","answer");
         intent.putExtra("answer",10);
 
         startActivity(intent);
