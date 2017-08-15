@@ -1,7 +1,6 @@
 package jp.techachademy.rika.sumitomo.calcapp;
 
 import android.os.Bundle;
-import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,8 +13,8 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    EditText mEditText;
-    EditText mEditText2;
+    EditText mEditText ;
+    EditText mEditText2 ;
 
     float answer;
 
@@ -41,12 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
 
         String text = mEditText.getText().toString();
-        String text2 =mEditText2.getText().toString();
+        String text2 = mEditText2.getText().toString();
 
         float value = Float.parseFloat(text);
         float value2 = Float.parseFloat(text2);
-
-
 
         if(v.getId() == R.id.tasu){
             answer = value + value2;
@@ -59,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         Log.d("UI_PARTS",String.valueOf(answer));
 
+        if(mEditText==null ||mEditText2==null){
+            answer=0;
+
+        }
 
         Intent intent = new Intent(this,SecondActivity.class);
         intent.putExtra("watasu",answer);
