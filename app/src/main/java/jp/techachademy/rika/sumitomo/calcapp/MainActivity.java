@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, SecondActivity.class);
             intent.putExtra("watasu", answer);
             startActivity(intent);
-        } catch (NullPointerException ex) {
+        } catch (NumberFormatException ex) {
             String text = "0";
             String text2 = "0";
             showAlertDialog();
